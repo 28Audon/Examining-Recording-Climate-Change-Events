@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- STEP ONE: SET UP -->
-<!-- Add the bootstrap link up here AND the script down below -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <!-- Change the title to include your name!-->
@@ -15,12 +14,12 @@
     </title>
 </head>
 <body>
-<!-- STEP TWO: CUSTOMIZE THE LOOK-->
-<!-- Make adjustments to the display size, text color, background color, border, text alignment, etc... -->
+    {% extends 'base.html' %}
+    {% block body %}
+    <h1>About Us</h1>
+    {% endblock %}
   <link rel="stylesheet" href="mystyle.css">
 
-<!-- Use 4 different types of bootstrap classes -->
-<!-- The best way to do this is to search using the navbar. Put in a term OR a class tag -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
@@ -41,11 +40,6 @@
     </button>
     </div>
   </nav>
-
-  {% extends 'base.html' %}
-  {% block body %}
-  <h1>About Us</h1>
-  {% endblock %}
 <!-- Add the bootstrap script down here -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
