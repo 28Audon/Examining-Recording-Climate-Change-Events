@@ -30,6 +30,13 @@ like the navbar. -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!--This is where each of the templates are embedded in to this template -->
       <div class="container-fluid">
+            <div class="row">
+              <h5>Messages</h5>
+            <for message in messages></for>
+            <div class="mx-5 me-4 border-bottom px-1 col-md-3"><mark><message></message></mark></div>
+            <endfor></endfor>
+            <hr class="mt-1" style="height:2px;border-width:0;color:gray;background-color:gray">
+            </div>
 
 
         <div class="row">
