@@ -1,26 +1,45 @@
-<footer class="bg-white">
-  <div class="container pt-2 mt-2 border-top">
-    <div class="row pb-4">
-      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="static/bdog.png" alt="" width="50" class="mb-3">
-        <p class="font-italic text-muted">Some stuff</p>
-      </div>
-      <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 mx-auto">
-        <h6 class="text-uppercase font-weight-bold mb-4">This is the footer.</h6>
-        <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a href="/" class="text-muted">Home</a></li>
-          <li class="mb-2"><a href="/" class="text-muted">About Us</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-lg-0">
-        <h6 class="text-uppercase font-weight-bold mb-4">Some Stuff</h6>
-      </div>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid mb-3">
+    <a class="navbar-brand .navbar-text display-1 font-weight-bold" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 display-7" style="margin: 0% 37%;"> 
+        <li class="nav-item">
+          <a class="nav-link" href="/blogs">Blogs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Clinics
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/clinic/map">Map</a></li>
+            <li><a class="dropdown-item" href="/clinic/list">List</a></li>
+          </ul>
+        </li>
+        <li>
+      </li> 
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {% if current_user.is_anonymous %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
 
-  <!-- Copyrights -->
-  <div class="bg-light py-4">
-    <div class="container text-center">
-      <p class="text-muted mb-0 py-2">©Some Stuff.</p>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/myprofile">
+              {{ current_user.gname }} 
+            </a>
+            
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+          </li>
+          {% endif %}
+        </li>
+      </ul>
     </div>
   </div>
-</footer>
+</nav> 
