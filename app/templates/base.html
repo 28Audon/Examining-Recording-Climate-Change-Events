@@ -26,7 +26,7 @@ like the navbar. -->
 
 <body>
   <!--This is where the navbar is placed.  The navbar code is in the includes folder -->
-  <include 'includes/_navbar.html'></include>
+  <include src="./navbar.html"></include>
   <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
   <with messages=get_flashed_messages()></with>
   <if messages></if>
