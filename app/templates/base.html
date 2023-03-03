@@ -5,116 +5,148 @@ like the navbar. -->
 <!DOCTYPE html>
 <!--This is the base template. The code on this page shows up on every page. The other template files are all embedded in this file. -->
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Put the title of your app here-->
-    <title>Home Page</title>
-    <!--This is where the link to the favicon and local CSS file goes.  The files that are referenced are in the static folder.-->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='local.css') }}"  type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}"  type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <!--Bootstrap links go here-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    
-    <!--This is some javascript tools for displaying date and time that doesn't work right now
+  <!--Put the title of your app here-->
+  <title>Home Page</title>
+  <!--This is where the link to the favicon and local CSS file goes.  The files that are referenced are in the static folder.-->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='local.css') }}" type="text/css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Bootstrap links go here-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!--This is some javascript tools for displaying date and time that doesn't work right now
       Each line needs to be surrounded by curly brackets to work.-->
-      <moment.include_moment()>
+  <moment.include_moment()>
 </head>
+
 <body>
   <!--This is where the navbar is placed.  The navbar code is in the includes folder -->
   <include 'includes/_navbar.html'></include>
-    <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
-    <with messages = get_flashed_messages()></with>
-    <if messages></if>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <!--This is where each of the templates are embedded in to this template -->
+  <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
+  <with messages=get_flashed_messages()></with>
+  <if messages></if>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!--This is where each of the templates are embedded in to this template -->
+    <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <!--image/logo fill in-->
-          <img src="https://d32qe1r3a676y7.cloudfront.net/eyJidWNrZXQiOiJibG9nLWVjb3RyZWUiLCJrZXkiOiAiYmxvZy8wMDAxLzAxL2FkNDZkYmI0NDdjZDBlOWE2YWVlY2Q2NGNjMmJkMzMyYjBjYmNiNzkuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6IDkwMCwiaGVpZ2h0IjowLCJmaXQiOiJjb3ZlciJ9fX0=" alt="Logo" width="50" height="45" class="d-inline-block align-text-top">
+          <img
+            src="https://d32qe1r3a676y7.cloudfront.net/eyJidWNrZXQiOiJibG9nLWVjb3RyZWUiLCJrZXkiOiAiYmxvZy8wMDAxLzAxL2FkNDZkYmI0NDdjZDBlOWE2YWVlY2Q2NGNjMmJkMzMyYjBjYmNiNzkuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6IDkwMCwiaGVpZ2h0IjowLCJmaXQiOiJjb3ZlciJ9fX0="
+            alt="Logo" width="50" height="45" class="d-inline-block align-text-top">
           <a class="navbar-brand" href="#">
             Recording Events APP
             <h6>
-              Home Page
+              About Us
             </h6>
           </a>
           <!---->
         </a>
-        <!--Nav bar button-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--Nav bar stuff-->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+          <!--navbar button-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!---->
+        </form>
+
+
+        <!---->
+        <!---->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="container-fluid">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Links
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Site Links
               </a>
               <ul class="dropdown-menu">
                 <div class="container text-center">
                   <div class="row">
-                    <div class="col p-3 bg-info bg-opacity-40 border border-info border-start-5 bg-dark rounded-end">
+                    <div class="col p-3 bg-info bg-opacity-40 border border-info border-start-5 bg-dark">
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="base.html">- base/Home Page?</a>
+                          <a class="nav-link active" aria-current="page" href="base.html">-
+                            base/Home Page?</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="aboutus.html">- aboutus.html</a>
+                          <a class="nav-link active" aria-current="page" href="aboutus.html">-
+                            aboutus.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="blank_form.html">- blank_form.html</a>
+                          <a class="nav-link active" aria-current="page" href="blank_form.html">-
+                            blank_form.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="blog.html">- blog.html</a>
+                          <a class="nav-link active" aria-current="page" href="blog.html">-
+                            blog.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                        <a class="nav-link active" aria-current="page" href="blogform.html">- blogform.html</a>
+                          <a class="nav-link active" aria-current="page" href="blogform.html">-
+                            blogform.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="blogs.html">- blogS.html</a>
+                          <a class="nav-link active" aria-current="page" href="blogs.html">-
+                            blogS.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="commentform.html">- commentform.html</a>
+                          <a class="nav-link active" aria-current="page" href="commentform.html">-
+                            commentform.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="index.html">- index.html</a>
+                          <a class="nav-link active" aria-current="page" href="index.html">-
+                            index.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="login.html">- login.html</a>
+                          <a class="nav-link active" aria-current="page" href="login.html">-
+                            login.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="profileform.html">- profileform.html</a>
+                          <a class="nav-link active" aria-current="page" href="profileform.html">-
+                            profileform.html</a>
                         </li>
                       </ul>
                       <ul class="navbar-nav">
                         <li>
-                          <a class="nav-link active" aria-current="page" href="profilemy.html">- profilemy.html</a>
+                          <a class="nav-link active" aria-current="page" href="profilemy.html">-
+                            profilemy.html</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li>
+              <a class="nav-link active" aria-current="page" href=""><!--Text--></a>
             </li>
           </ul>
         </div>
@@ -124,7 +156,7 @@ like the navbar. -->
     <endif></endif>
     <endwith></endwith>
     <div class="container text-center">
-      <div class="row"> 
+      <div class="row">
         <div class="col p-3 bg-info border border-info border-start-50 rounded-start">
           <!---->
           <h3>
@@ -161,89 +193,95 @@ like the navbar. -->
         <!-- Section: Social media -->
         <section class="mb-4">
           <!-- Github -->
-          <a class="btn text-white btn-floating m-1"  href="https://github.com/28Audon" role="button">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Logo" width="50" height="45" class="d-inline-block align-text-top">
+          <a class="btn text-white btn-floating m-1" href="https://github.com/28Audon" role="button">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Logo" width="50"
+              height="45" class="d-inline-block align-text-top">
           </a>
         </section>
         <!-- Section: Social media -->
 
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>Text box</p>
-    </section>
-    <!-- Section: Text -->
+        <!-- Section: Text -->
+        <section class="mb-4">
+          <p>Text box</p>
+        </section>
+        <!-- Section: Text -->
 
-    <!-- Section: Links -->
-    <section class="">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Links</h5>
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Link 1</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
       </div>
-      <!--Grid row-->
-    </section>
-    <!-- Section: Links -->
-  </div>
-  <!-- Grid container -->
+      <!-- Grid container -->
 
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-white" href="<!---->">
-      ????
-    </a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="<!---->">
+          ????
+        </a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
     <!---->
     <include 'includes/_footer.html'></include>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+</body>
+
 </html>
