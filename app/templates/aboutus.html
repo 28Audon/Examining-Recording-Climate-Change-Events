@@ -21,12 +21,7 @@ like the navbar. -->
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!--This is some javascript tools for displaying date and time that doesn't work right now
       Each line needs to be surrounded by curly brackets to work.-->
-      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-      <script>
-         $(function() {
-            $("#includeHtml").load("_footer.html");
-         });
-      </script>
+  <moment.include_moment()>
 </head>
 <div w3-include-html="footer.html"></div>
 <body>
@@ -35,7 +30,7 @@ like the navbar. -->
   <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
   <with messages=get_flashed_messages()></with>
   <if messages></if>
-  <div id="includeHtml"></div>
+  
   <!---->
   <endif></endif>
   <endwith></endwith>
