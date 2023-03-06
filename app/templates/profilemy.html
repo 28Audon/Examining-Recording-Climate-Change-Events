@@ -10,21 +10,23 @@
 <div class="row">
     <div class="col-2">
         {% if current_user.image %}
-            <img class="img-thumbnail img-fluid" src="data:image;base64,{{base64encode(current_user.image.read())}}"> <br>
+        <img class="img-thumbnail img-fluid" src="data:image;base64,{{base64encode(current_user.image.read())}}"> <br>
         {% else %}
-            <img class="img-thumbnail" width = "100" src="/static/bdog.png">
-        {% endif %} 
+        <img class="img-thumbnail" width="100" src="/static/bdog.png">
+        {% endif %}
     </div>
     <div class="col display-5">
         {% if current_user.fname and current_user.lname %}
-            Name: {{current_user.fname}}  {{current_user.lname}} <br>
+        Name: {{current_user.fname}} {{current_user.lname}} <br>
         {% else %}
-            Google User Name: {{current_user.gname}} <br>
+        Google User Name: {{current_user.gname}} <br>
         {% endif %}
         Email: {{current_user.email}} <br>
 
     </div>
 </div>
+<br>
+Role: {{current_user.role}}
 <br>
 
 

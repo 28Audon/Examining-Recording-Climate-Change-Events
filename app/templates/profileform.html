@@ -6,6 +6,15 @@
     <!--enctype is needed to upload files -->
     <form action="" method="post" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
+        <!--new>-->
+        <p>
+            {{ form.role.label }}<br>
+            {{ form.role() }}<br>
+            {% for error in form.role.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <!--<new-->
         <p>
             {{ form.fname.label }}<br>
             {{ form.fname(size=64) }}<br>
