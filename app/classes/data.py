@@ -31,6 +31,9 @@ class User(UserMixin, Document):
     email = EmailField()
     image = FileField()
     prononuns = StringField()
+    #New--->
+    role = StringField()
+    #New<---
 
     meta = {
         'ordering': ['lname','fname']
