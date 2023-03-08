@@ -37,6 +37,11 @@ window pane. Then open a new terminal by going to the Terminal menu at the top o
     conda create --name <yourProjectName> python=3
     conda activate <yourProjectName>
 
+
+    conda create --name <Recording-Events-APP> python=3
+    conda activate <Recording-Events-APP>
+    #Recording-Events-APP
+
 3) now you want to set this to your default environment for this project. go to the View menu 
     above and choose Command Palette...
 4) Search for 'Python: Select Interpreter' and choose the environment you just created.
