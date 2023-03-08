@@ -1,6 +1,6 @@
 ### Before we begin ###
 
-This assumes you have: 
+This assumes you have:
 1) Installed Visual Studio Code. (Which is what you are using to look at this file now)
 2) installed Git (https://github.com/git-guides/install-git)
     Git *NOT* github desktop.
