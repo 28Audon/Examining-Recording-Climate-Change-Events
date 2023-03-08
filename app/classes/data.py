@@ -83,7 +83,6 @@ class Comment(Document):
     author = ReferenceField('User',reverse_delete_rule=CASCADE) 
     event = StringField()
     event_area = StringField()
-    event_type = StringField()
     event_date = DateTimeField(default=dt.datetime.utcnow)
     modify_date = DateTimeField()
 
