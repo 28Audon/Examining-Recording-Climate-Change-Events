@@ -40,7 +40,6 @@ window pane. Then open a new terminal by going to the Terminal menu at the top o
     #Recording-Events-APP
     conda create --name <Recording-Events-APP> python=3
     conda activate <Recording-Events-APP>
-    
 
 3) now you want to set this to your default environment for this project. go to the View menu 
     above and choose Command Palette...
@@ -88,7 +87,7 @@ python -m pip install -r requirements.txt
 # You should see several packages being downloaded and installed.
 # You can check to see if it worked by clicking on the main.py to the left and then clicking the run button (triangle)
 # at the top right of the screen.  
-
+<here>
 TEST YOUR PROGRESS: 
 1) Click the Documents icon in the top left.
 2) Find main.py, click it. You should see a play button in the top right corner.
