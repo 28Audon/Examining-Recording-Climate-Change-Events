@@ -38,8 +38,8 @@ window pane. Then open a new terminal by going to the Terminal menu at the top o
     conda activate <yourProjectName>
 
     #Recording-Events-APP
-    conda create --name <Recording-Events-APP> python=3
-    conda activate <Recording-Events-APP>
+    conda create --name Recording-Events-APP python=3
+    conda activate Recording-Events-APP
 
 3) now you want to set this to your default environment for this project. go to the View menu 
     above and choose Command Palette...
