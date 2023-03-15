@@ -9,8 +9,8 @@ def index():
 @app.route('/aboutus')
 def aboutus():
     return render_template('aboutus.html')
-# Other
 
+# Other
 @app.route('/base.html')
 def index():
     return render_template('base.html')
