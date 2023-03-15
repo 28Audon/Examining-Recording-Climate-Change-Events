@@ -68,25 +68,25 @@ class Comment(Document):
 
     #New--->
     class Event(Document):
-    author = ReferenceField('User',reverse_delete_rule=CASCADE) 
-    subject = StringField()
-    content = StringField()
-    event_type = StringField()
-    create_date = DateTimeField(default=dt.datetime.utcnow)
-    modify_date = DateTimeField()
+        author = ReferenceField('User',reverse_delete_rule=CASCADE) 
+        subject = StringField()
+        content = StringField()
+        event_type = StringField()
+        create_date = DateTimeField(default=dt.datetime.utcnow)
+        modify_date = DateTimeField()
 
-    meta = {
-        'ordering': ['-createdate']
-    }
+        meta = {
+            'ordering': ['-createdate']
+        }
 
     class Location(Document):
-    author = ReferenceField('User',reverse_delete_rule=CASCADE) 
-    event = StringField()
-    event_area = StringField()
-    event_date = DateTimeField(default=dt.datetime.utcnow)
-    modify_date = DateTimeField()
+        author = ReferenceField('User',reverse_delete_rule=CASCADE) 
+        event = StringField()
+        event_area = StringField()
+        event_date = DateTimeField(default=dt.datetime.utcnow)
+        modify_date = DateTimeField()
 
-    meta = {
-        'ordering': ['-createdate']
-    }
+        meta = {
+            'ordering': ['-createdate']
+        }
     #New<---
