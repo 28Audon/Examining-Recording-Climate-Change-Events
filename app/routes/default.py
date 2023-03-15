@@ -9,6 +9,7 @@ def index():
 @app.route('/aboutus')
 def aboutus():
     return render_template('aboutus.html')
+# Other
 
 @app.route('/base.html')
 def index():
@@ -21,14 +22,18 @@ def index():
 @app.route('/blank.html')
 def index():
     return render_template('blank.html')
-@app.route('/blogform.html')
-
-def index():
-    return render_template('blogform.html')
 
 @app.route('/blog.html')
 def index():
     return render_template('blog.html')
+
+@app.route('/blogform.html')
+def index():
+    return render_template('blogform.html')
+
+@app.route('/blogs.html')
+def index():
+    return render_template('blogs.html')
 
 @app.route('/commentfrom.html')
 def index():
