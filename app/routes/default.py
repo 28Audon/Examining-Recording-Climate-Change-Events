@@ -38,3 +38,15 @@ def index():
 @app.route('/commentfrom.html')
 def index():
     return render_template('commentfrom.html')
+
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
+
+@app.route('/profileform.html')
+def index():
+    return render_template('profileform.html')
+
+@app.route('/profilemy.html')
+def index():
+    return render_template('profilemy.html')
