@@ -22,20 +22,9 @@ like the navbar. -->
   <!--This is some javascript tools for displaying date and time that doesn't work right now
       Each line needs to be surrounded by curly brackets to work.-->
   <moment.include_moment()>
-    <!---->
-    <script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("_navbar.html"); 
-    });
-    </script>
 </head>
 
 <body>
-  <div id="includedContent"></div>
-  <div data-include="_navbar.html"></div>
-<div data-include="_footer.html"></div>
-
   <!--This is where the navbar is placed.  The navbar code is in the includes folder -->
   <include 'includes/_navbar.html'></include>
   <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
