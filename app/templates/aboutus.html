@@ -23,6 +23,7 @@ like the navbar. -->
 
 <body>
   <!--This is where the navbar is placed.  The navbar code is in the includes folder -->
+  <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
   <!--Navbar>-->
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="container-fluid">
@@ -115,11 +116,6 @@ like the navbar. -->
   </div>
   </nav>
   <!--Navbar<-->
-  <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
-  {% with messages = get_flashed_messages() %}
-  {% if messages %}
-  <!--Navbar -->
-  <!--Navbar-->
   <!---->
   <div class="col p-3 bg-info bg-opacity-40 border border-info border-start-5 rounded-end">
     <div class="row">
