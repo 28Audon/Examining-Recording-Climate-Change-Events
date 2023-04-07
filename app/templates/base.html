@@ -28,8 +28,7 @@ like the navbar. -->
   <!-- Flask has a messages feature called "Flash" where you can pass messages to the template from the code.  This is where those messages are displayed -->
   {% include 'includes/_navbar.html' %}
   <!---->
-  {% with messages = get_flashed_messages() %}
-  {% if messages %}
+  
   <div class="container text-center">
     <div class="row">
       <h1>Home</h1>
