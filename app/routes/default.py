@@ -10,7 +10,3 @@ def index():
 @app.route('/aboutus')
 def aboutus():
     return render_template('aboutus.html')
-
-@app.route('/carbon_vulnerability')
-def aboutus():
-    return render_template('carbon_vulnerability.html')
