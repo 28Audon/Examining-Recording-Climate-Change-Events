@@ -13,7 +13,7 @@
 
     <!-- Section: Text -->
     <section class="mb-4">
-      <!--<p>Text box</p>-->
+      <p>Text box</p>
     </section>
     <!-- Section: Text -->
 
@@ -59,13 +59,31 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+          <!--find you location-->
+          <h5 class="text-uppercase">Get your coordinates</h5>
+          <p>Click the button to find you location.</p>
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-          </ul>
+          <button onclick="getLocation()">Try It</button>
+
+          <p id="demo"></p>
+
+          <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+            }
+
+            function showPosition(position) {
+              x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+            }
+          </script>
+          <!---->
         </div>
         <!--Grid column-->
       </div>
