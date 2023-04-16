@@ -79,7 +79,7 @@ class Comment(Document):
             'ordering': ['-createdate']
         }
 
-    class Location(Document):
+    class eventlocation(Document):
         author = ReferenceField('User',reverse_delete_rule=CASCADE) 
         event = StringField()
         event_area = StringField()
