@@ -90,20 +90,3 @@ class Comment(Document):
             'ordering': ['-createdate']
         }
     #New<---
-
-    class Location(Document):
-        author = ReferenceField('User',reverse_delete_rule=CASCADE) 
-        createdate = DateTimeField(default=dt.datetime.utcnow)
-        modifydate = DateTimeField()
-        name = StringField()
-        streetAddress = StringField()
-        city = StringField()
-        state = StringField()
-        zipcode = StringField()
-        description = StringField()
-        lat = FloatField()
-        lon = FloatField()
-        
-        meta = {
-            'ordering': ['-createdate']
-            }
