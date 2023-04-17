@@ -27,7 +27,7 @@
     map.addLayer(layer);
 
     // It even opens up a popup when you click it!
-    {% for eventlocation in eventeventlocations %}
+    {% for eventlocation in eventlocations %}
         {% if eventlocation.lat and eventlocation.lon %}
             // Add your fields to the ppup on the next line.
             L.marker(['{{eventlocation.lat}}', '{{eventlocation.lon}}']).addTo(map).bindPopup("<strong>{{eventlocation.name}}<br>{{eventlocation.streetAddress}}<br>{{eventlocation.city}},{{eventlocation.state}}  {{eventlocation.zipcode}}<br>desc: {{eventlocation.description}}</strong>")

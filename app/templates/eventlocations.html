@@ -4,15 +4,15 @@
 
 <div class="row">
     <div class="col-4">
-        <h1 class="display-1">All eventeventlocations</h1>
+        <h1 class="display-1">All eventlocations</h1>
     </div>
     <div class="col">
         <a href="/eventlocation/new" class="btn btn-primary btn-sm mt-5" role="button">New eventlocation</a>
     </div>
 </div>
 
-{% if eventeventlocations %}
-    {% for eventlocation in eventeventlocations %}
+{% if eventlocations %}
+    {% for eventlocation in eventlocations %}
         <div class="row border">
             <div class="col-1 border">
                 {% if loop.index == 1 %}
@@ -63,7 +63,7 @@
         </div>
     {% endfor %}
 {% else %}
-    <h1>No eventeventlocations</h1>
+    <h1>No eventlocations</h1>
 {% endif %}
 
 {% endblock %}
