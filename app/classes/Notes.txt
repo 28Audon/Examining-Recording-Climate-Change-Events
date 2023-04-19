@@ -1,0 +1,11 @@
+Needed map code
+- data.py
+
+eventlocations
+eventlocation
+
+carbonvulnerability.html
+commentform.html
+eventlocation.html
+eventlocationform.html
+eventlocationlocator.html
