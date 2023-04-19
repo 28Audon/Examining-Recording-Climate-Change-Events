@@ -1,6 +1,8 @@
 Needed map code
 - data.py
 
+Recording Events APP
+
 templates
 
 - eventlocation.html
