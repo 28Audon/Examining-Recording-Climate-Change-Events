@@ -2,14 +2,10 @@ Needed map code
 - data.py
 
 Recording Events APP (New changes)
-- clinic.py
+- 
 
 Routes changes
-- clinic.py
-- __init__.py
-- forum.py
-
-
+- 
 
 clinic - event
 
