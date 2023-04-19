@@ -1,3 +1,6 @@
+forum.py
+- do not remove (blog = Bog.objects.get(id=editComment.blog.id))
+
 Needed map code
 - data.py
 
