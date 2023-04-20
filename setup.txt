@@ -1,6 +1,6 @@
 ### Before we begin ###
 
-This assumes you have
+This assumes you have: 
 1) Installed Visual Studio Code. (Which is what you are using to look at this file now)
 2) installed Git (https://github.com/git-guides/install-git)
     Git *NOT* github desktop.
@@ -36,10 +36,6 @@ window pane. Then open a new terminal by going to the Terminal menu at the top o
 
     conda create --name <yourProjectName> python=3
     conda activate <yourProjectName>
-
-    #Recording-Events-APP
-    conda create --name Recording-Events-APP python=3
-    conda activate Recording-Events-APP
 
 3) now you want to set this to your default environment for this project. go to the View menu 
     above and choose Command Palette...
@@ -103,6 +99,9 @@ TEST YOUR PROGRESS:
         (muck users: python3 not python) 
         (if you get an access error use --user after install)
 4) run main.py again.  Keep doing this until you don't get module errors. 
+
+### Open Street Maps ###
+Add your email address to the secrets.py file
 
 ### Run Main.py ###
 1) Click the main.py file
