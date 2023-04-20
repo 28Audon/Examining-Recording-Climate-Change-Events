@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!--Maps stylesheet-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0-beta.1/leaflet.css" />
+<!--this is where the javascript will insert the map-->
+<div id="map" style="height: 600px;"></div>
+<!--link the javascript library-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0-beta.1/leaflet.js"></script>
+<script type="text/javascript">
+    // The first parameter are the coordinates of the center of the map
+    // The second parameter is the zoom level
+    var map = L.map('map').setView([37.8323039, -122.2575883], 13);
+    
+    // {s}, {z}, {x} and {y} are placeholders for map tiles
+    // {x} and {y} are the x/y of where you are on the map
+    // {z} is the zoom level
+    // {s} is the subdomain of cartodb
+    // 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png'
+    // 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    var layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    });
+    
+    // Now add the layer onto the map
+    map.addLayer(layer);
+
+    // It even opens up a popup when you click it!
+    {% for clinic in clinics %}
+        {% if clinic.lat and clinic.lon %}
+            // Add your fields to the ppup on the next line.
+            L.marker(['{{clinic.lat}}', '{{clinic.lon}}']).addTo(map).bindPopup("<strong>{{clinic.name}}<br>{{clinic.streetAddress}}<br>{{clinic.city}},{{clinic.state}}  {{clinic.zipcode}}<br>desc: {{clinic.description}}</strong>")
+        {% endif %}
+    {% endfor %}
+    // this is a way to add a marker that ALWAYS shows up.
+    L.marker([37.8323039, -122.2575883]).addTo(map).bindPopup("<strong>Oakland Tech</strong>").openPopup();
+
+
+</script>
+
+{% endblock %}
