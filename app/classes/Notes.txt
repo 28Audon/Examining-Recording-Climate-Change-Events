@@ -8,7 +8,7 @@ Recording Events APP (New changes)
 - 
 
 Routes changes
-- 
+- from .clinic import *
 
 clinic - event
 
