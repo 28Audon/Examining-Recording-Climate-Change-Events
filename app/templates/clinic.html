@@ -1,0 +1,57 @@
+<!-- this is going to look WACKY i am in the midst of working on it. Sorry :( - Sylvie  -->
+
+{% extends 'base.html' %}
+
+    {% block body %}
+    
+    {% if clinic %}
+    
+    {{moment(clinic.createdate).calendar()}} by {{clinic.author.username}} 
+    {% if clinic.modifydate %}
+        modified {{moment(clinic.modifydate).calendar()}}
+    {% endif %}
+    <br>
+        {% if clinic.author == current_user %}
+            <a data-toggle="tooltip" data-placement="top" title="Delete Clinic" href="/clinic/delete/{{clinic.id}}">
+                <img width="40" class="bottom-image" src="/static/delete.png">
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Edit Clinic" href="/clinic/edit/{{clinic.id}}">
+                <img width="40" class="bottom-image" src="/static/edit.png">
+            </a>
+        {% endif %}
+    
+        <h1 class="display-5">Name:  {{clinic.name}}</h1>
+        <p class="fs-3 text-break">
+                {{clinic.content}}
+        </p>
+        <p class="fs-3 text-break">
+            {% if clinic.author.image %}
+                <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(clinic.author.image.read())}}">
+            {% endif %}
+                {{clinic.content}}
+        </p>
+        <h1 class="display-5">
+            {{clinic.streetAddress}} <br>
+            {{clinic.city}} {{clinic.state}} {{clinic.zipcode}}
+        </h1>
+        <p class="fs-3 text-break"> 
+                {{clinic.content}}
+        </p>
+        <h1 class="display-5">Description: {{clinic.description}}</h1>
+        <p class="fs-3 text-break">
+                {{clinic.content}}
+        </p>
+        
+    {% else %}
+        <h1 class="display-5">No Clinic</h1>
+    {% endif %}
+    
+    {% endblock %}
+
+
+   <!--{% if clinic.author.image %}
+                <img width="120" class="img-thumbnail float-start me-2" src="data:image;base64,{{base64encode(clinic.author.image.read())}}">
+            {% endif %} 
+            
+            this is the code for the images, i took it out of 
+            the code but even when the code was still there i didn't see the pictures for some reason---> 
