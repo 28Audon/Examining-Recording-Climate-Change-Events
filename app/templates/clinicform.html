@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h1>Input New Clinic</h1>
+        <h4>If your clinic is not already in our database, add your clinic's info here for it to show up!</h4>
+        <!--List all errors in a group at the top-->
+        {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+                <div class="alert alert-error">
+                    <strong>Error!</strong>{{field}}: {{error}}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=64) }}<br>
+        </p>
+        <p>
+            Street: {{ form.streetAddress(size=64) }}<br>
+            City: {{ form.city}} State: {{form.state}} Zipcode: {{form.zipcode}}
+        </p> 
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(size=64) }}<br>
+        </p>
+        <p>
+            {{ form.submit() }}<br>
+
+        </p>
+    </form>
+
+{% endblock %}
