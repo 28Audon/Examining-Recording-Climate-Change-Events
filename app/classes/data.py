@@ -13,7 +13,7 @@ from setuptools import SetuptoolsDeprecationWarning
 from app import app
 from flask import flash
 from flask_login import UserMixin
-from mongoengine import FileField, EmailField, StringField, IntField, ReferenceField, DateTimeField, BooleanField, CASCADE
+from mongoengine import FileField, EmailField, StringField, IntField, ReferenceField, DateTimeField, BooleanField, FloatField, CASCADE
 from flask_mongoengine import Document
 import datetime as dt
 import jwt
@@ -65,6 +65,19 @@ class Comment(Document):
     meta = {
         'ordering': ['-createdate']
     }
+
+class Clinic(Document):
+    author = ReferenceField('User',reverse_delete_rule=CASCADE) 
+    createdate = DateTimeField(default=dt.datetime.utcnow)
+    modifydate = DateTimeField()
+    name = StringField()
+    streetAddress = StringField()
+    city = StringField()
+    state = StringField()
+    zipcode = StringField()
+    description = StringField()
+    lat = FloatField()
+    lon = FloatField()
 
     #New--->
     class Event(Document):
