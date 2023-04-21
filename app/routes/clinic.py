@@ -23,6 +23,7 @@ def clinicMap():
     return render_template('cliniclocator.html',clinics=clinics)
 
 @app.route('/clinic/list')
+@app.route('/clinics')
 @login_required
 def clinicList():
 
