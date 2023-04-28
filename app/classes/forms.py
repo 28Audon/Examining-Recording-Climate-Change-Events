@@ -27,7 +27,7 @@ class CommentForm(FlaskForm):
     content = TextAreaField('Comment', validators=[DataRequired()])
     submit = SubmitField('Comment')
 
-    #New--->
+    
 class ClinicForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     streetAddress = StringField('Address', validators=[DataRequired()])
@@ -36,4 +36,11 @@ class ClinicForm(FlaskForm):
     zipcode = StringField('Zipcode',validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+    #New--->    
+    time = StringField('Time', validators=[DataRequired()])
+    coordinates= StringField('Location', validators=[DataRequired()])
+    latitude = StringField('Latitude', validators=[DataRequired()])
+    longitude = StringField('Longitude', validators=[DataRequired()])
+    eventType = SelectField('EventType',choices=[("Event","Type")])
     #New<---
