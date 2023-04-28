@@ -78,6 +78,14 @@ class Clinic(Document):
     description = StringField()
     lat = FloatField()
     lon = FloatField()
+    #new--->
+    time = StringField()
+    coordinates = StringField()
+    latitude = StringField()
+    longitude = StringField()
+    eventType = StringField()
+    #New<---
+    
 
     #New--->
     class Event(Document):
