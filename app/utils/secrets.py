@@ -1,6 +1,4 @@
 import os
-
-
 def getSecrets():
     secrets = {
         'MONGO_HOST':'mongodb+srv://28Audon:mzFopj5QoLziauqx@cluster0.7hop0b3.mongodb.net/RecordingEvents?retryWrites=true&w=majority',
