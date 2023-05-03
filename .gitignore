@@ -135,4 +135,4 @@ dmypy.json
 
 # Other
 *.code-workspace
-secrets.py
+#secrets.py
