@@ -9,5 +9,6 @@ def getSecrets():
         'GOOGLE_CLIENT_SECRET':'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',
         'GOOGLE_DISCOVERY_URL':"https://accounts.google.com/.well-known/openid-configuration",
         'MY_EMAIL_ADDRESS':'s_audon.padillatorres@ousd.org',
+        'MY_EMAIL_ADDRESS':'28audon@gmail.com',
         }
     return secrets
