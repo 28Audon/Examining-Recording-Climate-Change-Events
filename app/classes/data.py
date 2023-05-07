@@ -76,8 +76,6 @@ class Clinic(Document):
     state = StringField()
     zipcode = StringField()
     description = StringField()
-    lat = FloatField()
-    lon = FloatField()
     #new--->
     time = StringField()
     coordinates = StringField()
@@ -85,6 +83,9 @@ class Clinic(Document):
     longitude = StringField()
     eventType = StringField()
     #New<---
+    lat = FloatField()
+    lon = FloatField()
+    
     
 
     #New--->

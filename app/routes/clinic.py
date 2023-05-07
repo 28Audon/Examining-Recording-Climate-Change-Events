@@ -90,6 +90,13 @@ def clinicNew():
             state = form.state.data,
             zipcode = form.zipcode.data,
             description = form.description.data,
+
+            time = form.time.data,
+            coordinates = form.coordinates.data,
+            latitude = form.latitude.data,
+            longitude = form.longitude.data,
+            eventType = form.eventType.data,
+
             author = current_user.id,
             modifydate = dt.datetime.utcnow,
         )
@@ -121,6 +128,12 @@ def clinicEdit(clinicID):
             state = form.state.data,
             zipcode = form.zipcode.data,            
             description = form.description.data,
+
+            time = form.time.data,
+            coordinates = form.coordinates.data,
+            latitude = form.latitude.data,
+            longitude = form.longitude.data,
+            eventType = form.eventType.data,
             modifydate = dt.datetime.utcnow,
         )
         editClinic = updateLatLon(editClinic)
@@ -132,5 +145,11 @@ def clinicEdit(clinicID):
     form.state.data = editClinic.state
     form.zipcode.data = editClinic.zipcode
     form.description.data = editClinic.description
+
+    form.time = editClinic.time
+    form.coordinates = editClinic.coordinates
+    form.latitude = editClinic.latitude
+    form.longitude = editClinic.longitude
+    form.eventType = editClinic.eventType
 
     return render_template('clinicform.html',form=form)

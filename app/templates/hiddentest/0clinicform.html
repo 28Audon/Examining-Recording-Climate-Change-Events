@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Input New Event</h1>
+<div class="container p-1">
+    <div class="row">
+        <h4>If your event is not already in our database, add your event's info here for it to show up!<br><br></h4>
+
+        <!--List all errors in a group at the top-->
+        {% for field in form.errors %}
+        {% for error in form.errors[field] %}
+        <div class="alert alert-error">
+            <strong>Error!</strong>{{field}}: {{error}}
+        </div>
+        {% endfor %}
+        {% endfor %}
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.name.label }}<br>
+                {{ form.name(size=64) }}<br>
+            </p>
+            <p>
+                Street: {{ form.streetAddress(size=64) }}<br>
+                City: {{ form.city}} State: {{form.state}} Zipcode: {{form.zipcode}}
+            </p>
+            <p>
+                {{ form.description.label }}<br>
+                {{ form.description(size=64) }}<br>
+            </p>
+            <p>
+                {{ form.submit() }}<br>
+
+            </p>
+        </form>
+        <div class="row">
+            <div class="col-sm">
+                <h5>Event Type</h5>
+                <!--
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Open this to select event</option>
+                    <option value="1">Wildfires</option>
+                    <option value="2">Tornados</option>
+                    <option value="3">Heat Wave</option>
+                    <option value="4">Droughts</option>
+                    <option value="5">Floods</option>
+                    <option value="6">Hurricanes</option>
+                </select>
+                -->
+                
+            </div>
+            <!---->
+            <div class="col-sm">
+                <!--Geolocation-->
+                <!--<h5 style="color: rgb(255, 255, 255)">Get your coordinates</h5>-->
+                <h5 class="text-uppercase">Get your coordinates</h5>
+                <!--<p style="color: rgb(255, 255, 255)">Click the button to get your coordinates.</p>-->
+                <p>Click the button to get your coordinates.</p>
+                <button onclick="getLocation()">Try It (Geolocation) <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
+                    </svg></button>
+
+
+                <p id="demo"></p>
+
+                <script>
+                    var x = document.getElementById("demo");
+
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(showPosition, showError);
+                        } else {
+                            x.innerHTML = "Geolocation is not supported by this browser.";
+                        }
+                    }
+
+                    function showPosition(position) {
+                        x.innerHTML = "Latitude: " + position.coords.latitude +
+                            "<br>Longitude: " + position.coords.longitude;
+                    }
+
+                    function showError(error) {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                x.innerHTML = "User denied the request for Geolocation."
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                x.innerHTML = "Location information is unavailable."
+                                break;
+                            case error.TIMEOUT:
+                                x.innerHTML = "The request to get user location timed out."
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                x.innerHTML = "An unknown error occurred."
+                                break;
+                        }
+                    }
+                </script>
+
+            </div>
+            <!--List all errors in a group at the top-->
+            {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+            <div class="alert alert-error">
+                <strong>Error!</strong>{{field}}: {{error}}
+            </div>
+            {% endfor %}
+            {% endfor %}
+            <form method="post">
+                {{ form.hidden_tag() }}
+                <p>
+                    Time: {{ form.time}}<br>
+                    Latitude: {{ form.latitude(size=64)}} Longitude: {{form.longitude(size=64) }}
+                </p>
+            </form>
+        </div>
+        <!--<img
+          src="https://d32qe1r3a676y7.cloudfront.net/eyJidWNrZXQiOiJibG9nLWVjb3RyZWUiLCJrZXkiOiAiYmxvZy8wMDAxLzAxL2FkNDZkYmI0NDdjZDBlOWE2YWVlY2Q2NGNjMmJkMzMyYjBjYmNiNzkuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6IDkwMCwiaGVpZ2h0IjowLCJmaXQiOiJjb3ZlciJ9fX0="
+          alt="Logo" width="50" height="45" class="d-inline-block align-text-top">-->
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+<!---->
+<!---->
+<!---->
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Input New Event</h1>
+<div class="container p-1">
+    <div class="row">
+        <h4>If your event is not already in our database, add your event's info here for it to show up!<br><br></h4>
+
+        <div class="col-6">
+            <!--List all errors in a group at the top-->
+            {% for field in form.errors %}
+            {% for error in form.errors[field] %}
+            <div class="alert alert-error">
+                <strong>Error!</strong>{{field}}: {{error}}
+            </div>
+            {% endfor %}
+            {% endfor %}
+            <form method="post">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.name.label }}<br>
+                    {{ form.name(size=64) }}<br>
+                </p>
+                <p>
+                    Street: {{ form.streetAddress(size=64) }}<br>
+                    City: {{ form.city}} State: {{form.state}} Zipcode: {{form.zipcode}}
+                </p>
+                <p>
+                    {{ form.description.label }}<br>
+                    {{ form.description(size=64) }}<br>
+                </p>
+                <p>
+                    {{ form.submit() }}<br>
+
+                </p>
+            </form>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-sm">
+                    <h5>Event Type</h5>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>Open this to select event</option>
+                        <option value="1">Wildfires</option>
+                        <option value="2">Tornados</option>
+                        <option value="3">Heat Wave</option>
+                        <option value="4">Droughts</option>
+                        <option value="5">Floods</option>
+                        <option value="6">Hurricanes</option>
+                    </select>
+                </div>
+                <!---->
+                <div class="col-sm">
+                    <!--Geolocation-->
+                    <!--<h5 style="color: rgb(255, 255, 255)">Get your coordinates</h5>-->
+                    <h5 class="text-uppercase">Get your coordinates</h5>
+                    <!--<p style="color: rgb(255, 255, 255)">Click the button to get your coordinates.</p>-->
+                    <p>Click the button to get your coordinates.</p>
+                    <button onclick="getLocation()">Try It (Geolocation) <svg xmlns="http://www.w3.org/2000/svg"
+                            width="16" height="16" fill="currentColor" class="bi bi-globe-americas" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
+                        </svg></button>
+
+
+                    <p id="demo"></p>
+
+                    <script>
+                        var x = document.getElementById("demo");
+
+                        function getLocation() {
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(showPosition, showError);
+                            } else {
+                                x.innerHTML = "Geolocation is not supported by this browser.";
+                            }
+                        }
+
+                        function showPosition(position) {
+                            x.innerHTML = "Latitude: " + position.coords.latitude +
+                                "<br>Longitude: " + position.coords.longitude;
+                        }
+
+                        function showError(error) {
+                            switch (error.code) {
+                                case error.PERMISSION_DENIED:
+                                    x.innerHTML = "User denied the request for Geolocation."
+                                    break;
+                                case error.POSITION_UNAVAILABLE:
+                                    x.innerHTML = "Location information is unavailable."
+                                    break;
+                                case error.TIMEOUT:
+                                    x.innerHTML = "The request to get user location timed out."
+                                    break;
+                                case error.UNKNOWN_ERROR:
+                                    x.innerHTML = "An unknown error occurred."
+                                    break;
+                            }
+                        }
+                    </script>
+
+                </div>
+                <!--List all errors in a group at the top-->
+                {% for field in form.errors %}
+                {% for error in form.errors[field] %}
+                <div class="alert alert-error">
+                    <strong>Error!</strong>{{field}}: {{error}}
+                </div>
+                {% endfor %}
+                {% endfor %}
+                <form method="post">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        Time: {{ form.time}}<br>
+                        Latitude: {{ form.latitude(size=64)}} Longitude: {{form.longitude(size=64) }}
+                    </p>
+                </form>
+            </div>
+            <!--<img
+          src="https://d32qe1r3a676y7.cloudfront.net/eyJidWNrZXQiOiJibG9nLWVjb3RyZWUiLCJrZXkiOiAiYmxvZy8wMDAxLzAxL2FkNDZkYmI0NDdjZDBlOWE2YWVlY2Q2NGNjMmJkMzMyYjBjYmNiNzkuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6IDkwMCwiaGVpZ2h0IjowLCJmaXQiOiJjb3ZlciJ9fX0="
+          alt="Logo" width="50" height="45" class="d-inline-block align-text-top">-->
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
